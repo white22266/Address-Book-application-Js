@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>JavaScript Address Book</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <main class="container">
+      <header class="page-header">
+        <div>
+          <p class="subtitle">Contact Management</p>
+          <h1>Address Book</h1>
+          <p class="description">
+            Contacts are stored temporarily in a JavaScript array.
+          </p>
+        </div>
+
+        <div class="contact-counter">
+          <strong id="contactCount">0</strong>
+          <span>Contacts</span>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2>Add Contact</h2>
+
+        <form id="contactForm">
+          <div class="form-grid">
+            <div class="form-group full-width">
+              <label for="name">Name *</label>
+
+              <input
+                type="text"
+                id="name"
+                placeholder="Enter contact name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+
+              <input
+                type="email"
+                id="email"
+                placeholder="name@example.com"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone</label>
+
+              <input
+                type="text"
+                id="phone"
+                placeholder="eg. 0123456789"
+              />
+            </div>
+
+            <div class="form-group full-width">
+              <label for="street">Street</label>
+
+              <input
+                type="text"
+                id="street"
+                placeholder="Enter address"
+              />
+            </div>
+
+            <div class="form-group">
+            <label for="state">State</label>
+                <select id="state" required>
+                    <option value="" selected disabled>Select state</option>
+                    <option value="Johor">Johor</option>
+                    <option value="Kedah">Kedah</option>
+                    <option value="Kelantan">Kelantan</option>
+                    <option value="Melaka">Melaka</option>
+                    <option value="Negeri Sembilan">Negeri Sembilan</option>
+                    <option value="Pahang">Pahang</option>
+                    <option value="Perak">Perak</option>
+                    <option value="Perlis">Perlis</option>
+                    <option value="Pulau Pinang">Pulau Pinang</option>
+                    <option value="Sabah">Sabah</option>
+                    <option value="Sarawak">Sarawak</option>
+                    <option value="Selangor">Selangor</option>
+                    <option value="Terengganu">Terengganu</option>
+                    <option value="Kuala Lumpur">Kuala Lumpur</option>
+                    <option value="Labuan">Labuan</option>
+                    <option value="Putrajaya">Putrajaya</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+              <label for="postcode">Postcode</label>
+
+              <input
+                type="text"
+                id="postcode"
+                placeholder="eg. 86400"
+              />
+            </div>
+
+            <div class="form-group full-width">
+              <label for="contactDescription">Description</label>
+
+              <textarea
+                id="contactDescription"
+                placeholder="Enter a short description"
+                maxlength="300"
+              ></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="primary-button">
+            Add Contact
+          </button>
+
+          <p id="formMessage" class="form-message"></p>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="list-header">
+          <div>
+            <h2>Contact List</h2>
+            <p>Click Delete to remove a contact using its ID.</p>
+          </div>
+
+          <input
+            type="search"
+            id="searchInput"
+            class="search-input"
+            placeholder="Search by name..."
+          />
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Description</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="contactTableBody"></tbody>
+          </table>
+        </div>
+
+        <p id="emptyMessage" class="empty-message">
+          No contacts found.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
